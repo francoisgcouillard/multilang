@@ -3,14 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title tkey="page-main-title">jQuery-multilang Example</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="lang.js"></script>
+	<script>
+		$(function(){
+			$("button:eq(0)").click ( function () {
+				lang.setLang('fr');
+			});
+			$("button:eq(1)").click ( function () {
+				lang.setLang('en');
+			});
+			$("button:eq(2)").click ( function () {
+				lang.setLang('es');
+			});
+			$("button:eq(3)").click ( function () {
+				//$("#texte").replaceWith(lang.getText($("#texte").html()));
+				$("#texte").html(lang.getTextContainer($("#texte").html()));
+			});
+		});
+		
+	</script>
 </head>
 <body>
 	<div align="center">
-		<p tkey="example1"></p>
-		<p tkey="example2"></p>        
+		<p tkey="example1 test"></p>
+		<p tkey="example2"></p>
+		<p tkey>tatatoto wee wee j'ai des trucs</p>
+		<div id="texte"><p>Tout commence à Saint-Roch le jeudi 28 mars 1918. La salle de quilles du Cercle Frontenac, sur la place Jacques-Cartier, est très&nbsp;animée.</p><p>Des centaines de jeunes gens y disputent amicalement des parties de&nbsp;bowling.</p></div>
+		<button>fr</button>
+		<button>en</button>
+		<button>es</button>
+		<button>after</button>
 	</div>
 
-	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="lang.js"></script>
 </body>
 </html>
